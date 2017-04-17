@@ -32,6 +32,7 @@ export SSH_CREDENTIALS_DIR=~/.ssh   # this one is used to share you ssh credenti
 
 sed -i "s|_PROJECT_NAME_.emergyalabs.com|$ENV_VHOST|g" *compose.yml # renames compose service name to use your microservice FQDN
 ```
+* Place your source code at '$PROJECT_DIR/src' (in e.g.: $PROJECT_DIR/src/index.php)
 * Run the container:
 ```
 docker-compose -f $ENVIRONMENT-compose.yml up -d
