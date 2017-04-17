@@ -64,33 +64,18 @@ RUN mkdir -p /var/run/mysqld && \
     mv /etc/mysql/my.cnf /etc/mysql/my.cnf.dist && \
     mv /var/lib/mysql /var/lib/mysql.dist
 
-# Configure Apache
-## Generating needed apache2 directories
+# Setup Apache
 RUN mkdir -p /var/run/apache2 && \
     chown -R www-data: /var/run/apache2 && \
     a2enmod actions alias authz_host deflate dir expires headers mime rewrite ssl php7.0 proxy proxy_http && \
-    ## Enable versioned sites and confs \
     mv /etc/apache2/sites-enabled /etc/apache2/sites-enabled.dist
 
-#Configure ssh
+# Setup ssh
 RUN mkdir -p /var/run/sshd
 
 # since this image will not be built as frequently as before, 
 # every individual asset inclusion is replaced by the general on-entrypoint-rsynced one
 ADD assets /assets
-#ADD assets/initial.sql /assets/initial.sql
-#ADD assets/etc/mysql/my.cnf /assets/etc/mysql/my.cnf
-## Production PHP settings.
-#ADD assets/etc/php /assets/etc/php
-#ADD assets/etc/apache2 /assets/etc/apache2
-## Configurations for bash.
-#ADD assets/etc/skel /assets/etc/skel
-#ADD assets/etc/profile.d /assets/etc/profile.d
-#ADD assets/etc/ssh /assets/etc/ssh
-## Configure 'supervisor' to maintain apache and php-fpm always alive
-#ADD assets/etc/supervisor /assets/etc/supervisor
-#ADD assets/bin/entrypoint.functions /assets/bin/entrypoint.functions
-#ADD assets/bin/entrypoint /assets/bin/entrypoint
 
 VOLUME ["/var/log/apache2","/var/log/supervisor","/var/log/mysql","/var/lib/mysql"]
 ENTRYPOINT ["/assets/bin/entrypoint"]
