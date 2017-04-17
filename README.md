@@ -2,6 +2,12 @@
 
 # ToC (Table of Contents)
 
+   * [ToC (Table of Contents)](#toc-table-of-contents)
+   * [Build](#build)
+   * [Run](#run)
+   * [Container's assets](#assets)
+   * [Contributing](#contributing)
+   * [Licence and Authors](#licence-and-authors)
 
 # Build
 
