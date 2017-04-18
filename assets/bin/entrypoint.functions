@@ -67,7 +67,7 @@ function check-mysql-conn() {
 function init-mysql-db() {
 
   #MYSQLD_SAFE="mysqld_safe --user mysql --skip-grant-tables"
-    MYSQLD_SAFE="mysqld_safe --user mysql"
+  MYSQLD_SAFE="mysqld_safe --user mysql"
 
   if [[ -z "$MYSQL_HOST" ]] || [[ "$MYSQL_HOST" == "localhost" ]]
   then
@@ -92,7 +92,7 @@ function init-mysql-db() {
 
       if [ ! -e "/var/lib/mysql/mysql" ]
       then
-	rsync -Pav /var/lib/mysql.dist/ /var/lib/mysql/
+        rsync -Pav /var/lib/mysql.dist/ /var/lib/mysql/
       fi
       
       chown -R mysql: /var/lib/mysql
