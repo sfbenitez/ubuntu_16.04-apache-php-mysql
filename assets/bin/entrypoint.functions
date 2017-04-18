@@ -64,10 +64,15 @@ function check-mysql-conn() {
 
 }
 
-function init-mysql-db() {
+function start-mysqld-safe() {
 
   #MYSQLD_SAFE="mysqld_safe --user mysql --skip-grant-tables"
   MYSQLD_SAFE="mysqld_safe --user mysql"
+  $MYSQLD_SAFE &
+
+}
+
+function init-mysql-db() {
 
   if [[ -z "$MYSQL_HOST" ]] || [[ "$MYSQL_HOST" == "localhost" ]]
   then
@@ -96,7 +101,7 @@ function init-mysql-db() {
       fi
       
       chown -R mysql: /var/lib/mysql
-      $MYSQLD_SAFE &
+      start-mysqld-safe
 
       check-mysql-conn
       while [ $? -ne 0 ]
