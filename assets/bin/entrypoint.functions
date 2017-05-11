@@ -124,7 +124,7 @@ function init-mysql-db() {
         echo "SET PASSWORD = PASSWORD(\"$MYSQL_PASS\");" | mysql 
       else
         echo "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASS}';" | mysql
-        echo "GRANT ALL PRIVILEGES ON ${MYSQL_USER}.* TO '${MYSQL_DBNAME}'@'%' WITH GRANT OPTION;" | mysql
+        echo "GRANT ALL PRIVILEGES ON ${MYSQL_DBNAME}.* TO '${MYSQL_USER}'@'%' WITH GRANT OPTION;" | mysql
         echo "SET PASSWORD FOR '$MYSQL_USER'@'%' = PASSWORD(\"$MYSQL_PASS\");" | mysql
       fi
 
