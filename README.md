@@ -1,5 +1,6 @@
 
 * [hub.docker.com (automated build):](https://hub.docker.com/r/emergya/automated-jenkins-dind) ![build passing](https://img.shields.io/docker/automated/emergya/automated-ubuntu_16.04-apache-php-mysql.svg)
+[![](https://images.microbadger.com/badges/image/emergya/automated-ubuntu_16.04-apache-php-mysql.svg)](https://hub.docker.com/r/emergya/automated-ubuntu_16.04-apache-php-mysql/)
 * [travis-ci.org (timestamped-commit tag):](https://hub.docker.com/r/emergya/ubuntu_16.04-apache-php-mysql/) [![Build Status](https://travis-ci.org/Emergya/ubuntu_16.04-apache-php-mysql.svg?branch=master)](https://travis-ci.org/Emergya/ubuntu_16.04-apache-php-mysql)
 
 
