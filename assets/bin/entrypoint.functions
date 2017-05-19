@@ -85,6 +85,8 @@ function init-mysql-db() {
       else
         MYSQL_DBNAME="$(echo $PROJECT_NAME | sed 's|-|_|g')"
       fi
+    else
+      MYSQL_DBNAME="$(echo $PROJECT_NAME | sed 's|-|_|g')"
     fi
     echo "export MYSQL_DBNAME=$MYSQL_DBNAME" > /etc/profile.d/mysql-environment.sh
 
