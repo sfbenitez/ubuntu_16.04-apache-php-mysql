@@ -1,7 +1,11 @@
-version: '3'
+version: '2'
 services:
-  dev-_PROJECT_NAME_.emergyalabs.com:
+  demo-_PROJECT_NAME_.emergyalabs.com:
     image: ${DOCKER_IMAGE}
+    ports:
+      - "22122:22"
+      - "80:80"
+      - "443:443"
     environment:
       - HOST_UID=${HOST_UID}
       - HOST_GID=${HOST_GID}
