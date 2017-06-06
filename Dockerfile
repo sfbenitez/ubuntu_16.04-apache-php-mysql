@@ -14,7 +14,7 @@ RUN apt-get update && \
     openssh-server openssh-client build-essential automake make autoconf libpcre3-dev software-properties-common supervisor sudo git vim emacs python-minimal fontconfig ssmtp mailutils \
     bash-completion less unzip\
     # stack services depends
-    apache2 apache2-utils mysql-client mysql-server libapache2-mod-php \
+    apache2 apache2-utils mysql-client mysql-server libapache2-mod-php libapache2-mod-geoip geoip-database \
     # php depends
     php \
     php-bcmath \
